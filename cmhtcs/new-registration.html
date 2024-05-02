@@ -1,0 +1,63 @@
+<!--page which helps us to accept new students without comming to us physically-->
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>    
+    <link rel="stylesheet" href="/css/registrations.css">
+     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> 
+  <script src="/css/sweetalert.js" ></script>
+  
+</head>
+<body>
+    <div class="container">
+        <form id="regForm">
+            <label for="firstname">Student Name:</label>
+            <input type="text" name="firstname" class="text" placeholder="Student name">
+            <label for="middlename">Middle Name:</label>
+            <input type="text" name="middlename" placeholder="middlename">
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" placeholder="lastname">
+            <label for="phone">Student Phone:</label>
+            <input type="tel" name="phone" placeholder="Phone_number">
+            <label for="reportcard">Report card(transcript)</label>
+            <input type="file" name="reportcard">
+            <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            var form = document.getElementById("regForm");
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "new-registration.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        Swal.fire({
+                            title: 'ስኬት',
+                            text: 'ማመልከቻዎ ደርሶናል አጣርተን በsms የምናሳዉቅዎ ይሆናል!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
+
+                        form.reset();
+                    } else {
+                        Swal.fire({
+                            title: 'ችግር',
+                            text: 'የሆነ ስህተት ተከስቷል',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                }
+            };
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>
+

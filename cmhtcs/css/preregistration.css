@@ -1,0 +1,50 @@
+.btns{
+    display: flex;
+    justify-content: center;
+    /* Align buttons horizontally in the center */       
+    gap: 10px;
+    }
+  
+.button {
+
+padding: 15px 25px;
+font-size: 16px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+border: 2px solid #3498db;
+border-radius: 5px;
+color: #3498db;
+background-color: #fff;
+transition: background-color 0.3s, color 0.3s;
+margin: 5px; 
+}
+
+
+.button:hover {
+background-color: #3498db;
+color: #fff;
+
+}
+
+.p {
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  font-weight: normal; 
+  color: #333; }
+  
+  h1 {
+ text-align: center;
+color: #3498db;  
+}
+h3 {
+text-align: center;
+color: #3498db;
+}
+h1:hover{
+background-color: #3498db;
+color: #fff;
+}
+h3:hover{
+  color: red;
+}

@@ -1,0 +1,39 @@
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #dfecf7;
+   font-family: serif;
+
+}
+  .slideshow-container {
+            max-width: 300px;
+            position: relative;
+            margin: auto;
+             text-align:center;
+        }
+
+        .slideshow-container img {
+           /** width: 100%;**/
+            height: ;
+            display: block;
+        }
+    
+  
+ .par{
+   letter-spacing:2px;
+    
+  
+    }
+
+.img{
+ 
+  width: 300;
+  height: 200;
+  padding: 100;
+  
+}
+
+
