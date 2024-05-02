@@ -1,0 +1,82 @@
+<!--page which helps us to accept absent students reason quickly from where ever they are-->
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Absence</title>
+  <link rel="stylesheet" href="/css/reportabsence.css"> 
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+<body>
+  <div class="container">
+    <h2>Report Absence</h2>
+    <form id="absenceForm">
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" name="name" required>
+   <label for="grade">Grade</label>
+      <select class="option" name="grade">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>         
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>         
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>         
+         <option>11</option>
+         <option>12</option>
+      </select>
+        
+        <label for="section">Section</label>
+      <select class="option" name="section">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+      </select>
+      <label for="date">Date of Absence:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="reason">Reason for Absence:</label>
+      <textarea id="reason" name="reason" rows="4" required></textarea>
+
+      <button type="submit" onclick="submitForm()">Submit</button>
+    </form>
+  </div>
+
+  <script>        
+    function submitForm() {
+        var form = document.getElementById("absenceForm");
+        var formData = new FormData(form);
+    
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "report.php", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    Swal.fire({
+                        title: 'Thank you!. ',
+                        text: 'ስለ ማመልከቻዎ እናመሰግናለን የምክንያቱ ትክክለኛነት የሚጣራ ይሆናል !!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+    
+                    form.reset();
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Something went wrong.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            }
+        };
+        xhr.send(formData);
+    }
+  </script>
+  </body>
+</html>
+

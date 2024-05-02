@@ -1,0 +1,147 @@
+url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {    
+    list-style-type: none;
+    text-decoration: none;
+  
+}
+
+
+.navbar {
+    position: fixed;
+    background:  #0082e6;
+    /*linear-gradient(to right, white,white); Define gradient */
+    display: ;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+    font-family:'Roboto',sans-sefif;
+  
+}
+.logo {
+            padding-left: 50px;
+           /* padding-top: 50px;*/
+        }
+.logo img {
+            padding-top: 10px;
+        }
+
+
+.footer {
+    z-index: 999;
+}
+
+.checkbtn {
+    font-size: 20px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    display: none;
+    text-decoratin: none;
+    font-weight: 700;]
+}
+
+#check {
+    display: none;
+}
+
+.navbar ul {
+    float: right;
+    margin-right: 20px;
+}
+
+.navbar ul li {
+    display: inline-block;
+    line-height: 50px;
+    
+}
+
+.navbar ul li a {
+    font-size: 17px;
+    padding:3px;
+}
+
+.dropdown {
+    float: right;
+    text-align: center;
+}
+
+.navbar a:hover,
+.dropdown a:hover,
+.dropdownbutton:hover,
+.dropdown-lists a:hover {
+    border-bottom: 1px solid aquamarine;
+    border-radius: 20px;
+    color: #ff7200;
+}
+
+.dropdown:hover .dropdown-lists {
+    display: block;
+}
+
+h2{
+  color:white;
+}
+.navbar ul li a {
+    background: #fffaf0;
+    /* Define gradient */
+    -webkit-background-clip: text;
+    /* Apply background to text */
+    color: transparent;
+    /* Hide original text */
+    padding:none;
+}
+
+@media screen and (max-width: 950px) {
+    .logo {
+        padding-top: 10px;
+        padding-left: 50px;
+    }
+
+    .navbar ul li a {
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 850px) {
+        .logo {
+            margin-top: 20px;
+            padding-left: 30px;
+            padding-top: 20px;
+        }
+
+        .checkbtn {
+            display: block;
+        }
+
+        .navbar ul {
+            position: fixed;
+            width: 40%;
+            height: 80vh;
+            top: 90px;
+            right: -100%;
+            text-align: center;
+            background-color: white;
+            border: 1px solid #3498db;
+            transition: all 0.5s;
+        }
+
+        .navbar ul li,
+        .lists {
+            display: block;
+        }
+
+        .navbar ul li a {
+            font-size: 15px;
+            color: #3498db;
+        }
+
+        #check:checked~ul {
+            right: 0;
+        }
+       .navbar ul li {     
+  margin-bottom: 1px;
+    }
+}
+ 
